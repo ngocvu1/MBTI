@@ -4,7 +4,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Đánh Giá MBTI + Định Hướng Nghề Nghiệp</title>
+    <title>MBTI (40 câu) + Định Hướng Nghề Nghiệp – Client‑side Scoring</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -19,61 +19,47 @@
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 16px;
+            margin: 24px auto;
+            padding: 22px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .18);
         }
 
         @media (min-width: 768px) {
             .container {
-                padding: 30px;
+                padding: 32px;
             }
         }
 
         .container-title {
-            font-size: 20px;
-            font-weight: bold;
+            font-size: 28px;
+            font-weight: 800;
             text-align: center;
-            color: #4a5568;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        @media (min-width: 768px) {
-            .container-title {
-                font-size: 28px;
-            }
+            color: #2d3748;
+            letter-spacing: .2px;
         }
 
         .container-greeting {
             background: linear-gradient(45deg, #f8f9ff, #e8f4f8);
-            padding: 20px;
-            border-radius: 10px;
+            padding: 18px;
+            border-radius: 12px;
             border-left: 4px solid #667eea;
-            margin-bottom: 30px;
+            margin: 18px 0 28px;
         }
 
         .question {
             background: #f8f9fa;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 20px;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
             border-left: 4px solid #28a745;
         }
 
-        @media (min-width: 768px) {
-            .question {
-                padding: 20px;
-            }
-        }
-
         .question-title {
-            font-weight: bold;
+            font-weight: 700;
             color: #2d3748;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .required {
@@ -81,116 +67,114 @@
         }
 
         .form-check {
-            margin-bottom: 10px;
-            padding: 8px;
+            margin-bottom: 8px;
+            padding: 6px;
+            border-radius: 6px;
         }
 
         .form-check:hover {
-            background-color: #e2e8f0;
-            border-radius: 5px;
+            background: #edf2f7;
         }
 
         .btn-primary {
             background: linear-gradient(45deg, #667eea, #764ba2);
             border: none;
-            padding: 12px 30px;
-            font-size: 16px;
-            border-radius: 25px;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            padding: 12px 26px;
+            border-radius: 999px;
+            box-shadow: 0 6px 18px rgba(102, 126, 234, .35);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            transform: translateY(-1px);
+            box-shadow: 0 9px 26px rgba(102, 126, 234, .45);
         }
 
         .modal-content {
-            border-radius: 15px;
+            border-radius: 16px;
             border: none;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            margin: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+            margin: 8px;
             max-height: 90vh;
             overflow-y: auto;
         }
 
-        @media (min-width: 768px) {
-            .modal-content {
-                margin: 0;
-            }
-        }
-
         .modal-header {
             background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            border-radius: 15px 15px 0 0;
-        }
-
-        .mbti-result {
-            text-align: center;
-            padding: 20px;
+            color: #fff;
+            border-radius: 16px 16px 0 0;
         }
 
         .mbti-type {
             font-size: 48px;
-            font-weight: bold;
-            color: #667eea;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            font-weight: 900;
+            color: #5a67d8;
+            text-align: center;
+            margin: 10px 0 4px;
+        }
+
+        .subnote {
+            text-align: center;
+            color: #4a5568;
+            margin-bottom: 12px;
+        }
+
+        .badge-soft {
+            background: #edf2f7;
+            color: #2d3748;
+            border-radius: 999px;
+            padding: 4px 10px;
+            font-size: 12px;
         }
 
         .breakdown-item {
             background: #f8f9fa;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 10px;
             border-left: 4px solid #667eea;
-        }
-
-        .breakdown-letter {
-            font-weight: bold;
-            color: #667eea;
-            font-size: 18px;
-        }
-
-        .summary-section {
-            background: linear-gradient(45deg, #f8f9ff, #e8f4f8);
             border-radius: 10px;
-            padding: 20px;
-            margin-top: 20px;
+            padding: 12px;
+            margin-bottom: 10px;
         }
 
         .section-heading {
-            font-weight: 700;
+            font-weight: 800;
             color: #2d3748;
-            margin-bottom: 12px;
+            margin: 14px 0 8px;
         }
 
         .career-card {
             background: #f8f9fa;
             border-left: 4px solid #764ba2;
-            border-radius: 8px;
-            padding: 16px;
+            border-radius: 10px;
+            padding: 14px;
+        }
+
+        .bar {
+            height: 10px;
+            background: #e2e8f0;
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .bar>div {
+            height: 100%;
+            background: #667eea;
+        }
+
+        .mini {
+            font-size: 12px;
+            color: #4a5568;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="container-title">Đánh Giá MBTI &amp; Tư Vấn Nghề Nghiệp</div>
-        <div class="container-greeting text-center">
-            <h5>Hệ thống đánh giá tính cách MBTI giúp bạn hiểu rõ bản thân và đưa ra lời khuyên phù hợp cho định hướng
-                ngành học &amp; nghề nghiệp.</h5>
-            <br>
-            <i>Vui lòng trả lời đầy đủ các câu hỏi có dấu <span class="required">*</span> rồi bấm <b>Nộp kết
-                    quả</b>.</i>
-        </div>
+        <div class="container-title">MBTI Trắc Nghiệm tính cách - Tư Vấn Ngành/Nghề</div>
+
 
         <div id="container-content">
-            <div class="py-3 text-center">
+            <div class="py-2 text-center">
                 <hr width="50%" class="mx-auto">
             </div>
-
-            <!-- Quiz renders here -->
             <form id="quiz-form"></form>
 
             <!-- Career inputs -->
@@ -198,32 +182,23 @@
                 <div class="question-title">Thông tin định hướng nghề nghiệp (tuỳ chọn)</div>
                 <div class="row g-3">
                     <div class="col-12 col-md-6">
-                        <label for="currentJob" class="form-label">Bạn đang làm gì / định ngành hiện tại?</label>
-                        <input id="currentJob" class="form-control"
-                            placeholder="Ví dụ: Học sinh lớp 12, yêu thích Toán-Lý-IT">
+                        <label for="currentJob" class="form-label">Bạn đang làm gì / bối cảnh hiện tại?</label>
+                        <input id="currentJob" class="form-control" placeholder="Ví dụ: HS lớp 12, thế mạnh Toán-Lý-IT">
                     </div>
                     <div class="col-12 col-md-6">
                         <label class="form-label">Bạn đang phân vân giữa 2 lựa chọn?</label>
-                        <div class="input-group mb-2">
-                            <span class="input-group-text">Lựa chọn 1</span>
-                            <input id="optionA" class="form-control" placeholder="Ví dụ: Kỹ sư phần mềm">
-                        </div>
-                        <div class="input-group">
-                            <span class="input-group-text">Lựa chọn 2</span>
-                            <input id="optionB" class="form-control" placeholder="Ví dụ: Marketing số">
-                        </div>
+                        <div class="input-group mb-2"><span class="input-group-text">Lựa chọn 1</span><input
+                                id="optionA" class="form-control" placeholder="Ví dụ: Kỹ sư phần mềm"></div>
+                        <div class="input-group"><span class="input-group-text">Lựa chọn 2</span><input id="optionB"
+                                class="form-control" placeholder="Ví dụ: Marketing số"></div>
                     </div>
                 </div>
             </div>
 
-            <div class="question-write-container" data-type="text">
-                <div class="quìz-form-button text-center">
-                    <button id="button-submit" type="button" class="btn btn-primary mt-3">
-                        Nộp kết quả
-                    </button>
-                    <br><br>
-                    <i>Các phần <span class="required">*</span> là bắt buộc cho phần MBTI. Phần định hướng nghề nghiệp
-                        là <b>không bắt buộc</b>, nhưng nên điền nếu bạn muốn gợi ý ngành học.</i>
+            <div class="text-center">
+                <button id="button-submit" type="button" class="btn btn-primary">Nộp kết quả</button>
+                <div class="mini mt-2">Mục có dấu <span class="required">*</span> là bắt buộc. Phần định hướng nghề là
+                    <b>không bắt buộc</b> nhưng nên điền nếu muốn gợi ý ngành.
                 </div>
             </div>
         </div>
@@ -233,13 +208,12 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Đang phân tích kết quả...</h5>
+                        <h5 class="modal-title">Đang phân tích...</h5>
                     </div>
                     <div class="modal-body text-center">
-                        <div class="spinner-border text-primary" role="status">
-                            <span class="visually-hidden">Loading...</span>
-                        </div>
-                        <p class="mt-3">Kết quả của bạn đang được phân tích. Vui lòng chờ trong giây lát...</p>
+                        <div class="spinner-border text-primary" role="status"><span
+                                class="visually-hidden">Loading...</span></div>
+                        <p class="mt-3">Đang xử lý kết quả MBTI và (nếu có) tư vấn ngành/nghề...</p>
                     </div>
                 </div>
             </div>
@@ -250,14 +224,13 @@
             <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Kết Quả</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                        <h5 class="modal-title">Kết Quả</h5><button type="button" class="btn-close btn-close-white"
+                            data-bs-dismiss="modal"></button>
                     </div>
-                    <div class="modal-body" id="resultContent"><!-- render here --></div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                        <button type="button" class="btn btn-primary" onclick="restartQuiz()">Làm lại</button>
-                    </div>
+                    <div class="modal-body" id="resultContent"></div>
+                    <div class="modal-footer"><button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Đóng</button><button type="button" class="btn btn-primary"
+                            onclick="restartQuiz()">Làm lại</button></div>
                 </div>
             </div>
         </div>
@@ -265,34 +238,57 @@
 
     <script>
         // ====== CONFIG ======
-        const GEMINI_API_KEY = "AIzaSyA6RDY_Jlj5KjN8a85QVk8U2jLJ3Hg50sY"; // ĐỪNG commit key thật vào client
+        const GEMINI_API_KEY = "AIzaSyA6RDY_Jlj5KjN8a85QVk8U2jLJ3Hg50sY"; 
 
-        // 20 câu hỏi (5 câu cho từng cặp EI, SN, TF, JP). Câu trả lời A/B cố gắng cân bằng theo cặp.
+        // ====== QUESTIONS (40) ======
         const QUESTIONS = [
-            // E vs I
+            // E vs I (10 câu)
             { id: 'q1', dim: 'EI', text: 'Bạn cảm thấy năng lượng đến từ đâu?', a: 'Từ việc giao tiếp và tương tác với mọi người.', b: 'Từ thời gian một mình, suy nghĩ sâu về những gì đang xảy ra.' },
             { id: 'q2', dim: 'EI', text: 'Trong sự kiện đông người, bạn thường...', a: 'Chủ động bắt chuyện và kết nối.', b: 'Quan sát, chỉ tham gia khi cần.' },
             { id: 'q3', dim: 'EI', text: 'Một ngày lý tưởng của bạn là...', a: 'Hoạt động cùng nhóm/CLB, nhiều tương tác.', b: 'Tự học/tự làm việc, không bị gián đoạn.' },
             { id: 'q4', dim: 'EI', text: 'Khi có ý tưởng mới, bạn...', a: 'Muốn nói ra và thảo luận ngay.', b: 'Muốn suy nghĩ kỹ trước khi chia sẻ.' },
             { id: 'q5', dim: 'EI', text: 'Về phong cách giao tiếp, bạn...', a: 'Thích nói trực tiếp, phản hồi nhanh.', b: 'Thích nhắn tin hoặc suy nghĩ rồi mới trả lời.' },
-            // S vs N
-            { id: 'q6', dim: 'SN', text: 'Khi học một chủ đề mới, bạn thích...', a: 'Ví dụ cụ thể, quy trình rõ ràng.', b: 'Ý tưởng tổng quan, mô hình/khả năng tương lai.' },
-            { id: 'q7', dim: 'SN', text: 'Bạn tin tưởng hơn vào...', a: 'Dữ kiện, trải nghiệm có thể kiểm chứng.', b: 'Trực giác, mối liên hệ trừu tượng.' },
-            { id: 'q8', dim: 'SN', text: 'Trong bài tập dự án, bạn...', a: 'Tập trung vào chi tiết, yêu cầu cụ thể.', b: 'Khám phá phương án mới, cải tiến cách làm.' },
-            { id: 'q9', dim: 'SN', text: 'Với xu hướng học tập, bạn...', a: 'Muốn “làm đúng” theo hướng dẫn.', b: 'Muốn “hiểu sâu” để sáng tạo cách riêng.' },
-            { id: 'q10', dim: 'SN', text: 'Khi đánh giá thông tin, bạn...', a: 'Ưu tiên dữ liệu hiện có.', b: 'Đặt câu hỏi “nếu… thì…”, hình dung tương lai.' },
-            // T vs F
-            { id: 'q11', dim: 'TF', text: 'Bạn thường ưu tiên điều gì khi ra quyết định?', a: 'Lý trí, phân tích các yếu tố khách quan.', b: 'Cảm xúc và tác động đến mọi người.' },
-            { id: 'q12', dim: 'TF', text: 'Trong tranh luận, bạn...', a: 'Thích lập luận logic, thẳng thắn.', b: 'Thích hoà giải, giữ cảm xúc tích cực.' },
-            { id: 'q13', dim: 'TF', text: 'Khi góp ý bạn bè, bạn...', a: 'Nói thẳng điểm cần cải thiện.', b: 'Nói khéo để người nghe không buồn.' },
-            { id: 'q14', dim: 'TF', text: 'Với xung đột, bạn...', a: 'Giải quyết theo nguyên tắc/công bằng.', b: 'Ưu tiên mối quan hệ/hoàn cảnh cụ thể.' },
-            { id: 'q15', dim: 'TF', text: 'Bạn thấy “đúng-sai” quan trọng hơn hay “tình cảm” quan trọng hơn?', a: 'Đúng-sai/tiêu chuẩn.', b: 'Tình cảm/mối quan hệ.' },
-            // J vs P
-            { id: 'q16', dim: 'JP', text: 'Bạn thích làm gì hơn trong công việc/học tập?', a: 'Theo kế hoạch rõ ràng, có tổ chức.', b: 'Linh hoạt, tuỳ cơ ứng biến.' },
-            { id: 'q17', dim: 'JP', text: 'Khi phải hoàn thành một công việc, bạn sẽ...', a: 'Lập kế hoạch và làm ngay.', b: 'Tìm thêm thông tin rồi điều chỉnh dần.' },
-            { id: 'q18', dim: 'JP', text: 'Bạn cảm thấy sao về kế hoạch và lịch trình?', a: 'Thích kỷ luật, tuân thủ thời hạn.', b: 'Thích linh hoạt, không quá gò bó.' },
-            { id: 'q19', dim: 'JP', text: 'Kiểu công việc ưa thích?', a: 'Yêu cầu rõ, tiêu chí cụ thể.', b: 'Sáng tạo, có không gian thử nghiệm.' },
-            { id: 'q20', dim: 'JP', text: 'Trước kỳ thi/đ deadline, bạn...', a: 'Chuẩn bị sớm theo checklist.', b: 'Tăng tốc nước rút khi gần tới hạn.' }
+            { id: 'q6', dim: 'EI', text: 'Khi đi học nhóm, bạn...', a: 'Thích nhóm đông người, nhiều ý kiến.', b: 'Thích nhóm nhỏ hoặc học một mình.' },
+            { id: 'q7', dim: 'EI', text: 'Sau một ngày dài, bạn nạp năng lượng bằng...', a: 'Đi chơi, gặp gỡ bạn bè.', b: 'Ở nhà yên tĩnh.' },
+            { id: 'q8', dim: 'EI', text: 'Bạn dễ kết bạn mới...', a: 'Rất nhanh, cởi mở.', b: 'Chậm, cần thời gian để làm quen.' },
+            { id: 'q9', dim: 'EI', text: 'Trong thảo luận lớp, bạn...', a: 'Hay phát biểu ý kiến.', b: 'Ít nói, thường lắng nghe.' },
+            { id: 'q10', dim: 'EI', text: 'Thời gian rảnh của bạn thường...', a: 'Đi chơi, tham gia CLB.', b: 'Đọc sách, nghe nhạc một mình.' },
+
+            // S vs N (10 câu)
+            { id: 'q11', dim: 'SN', text: 'Khi học một chủ đề mới, bạn thích...', a: 'Ví dụ cụ thể, quy trình rõ ràng.', b: 'Ý tưởng tổng quan, mô hình/khả năng tương lai.' },
+            { id: 'q12', dim: 'SN', text: 'Bạn tin tưởng hơn vào...', a: 'Dữ kiện, trải nghiệm có thể kiểm chứng.', b: 'Trực giác, mối liên hệ trừu tượng.' },
+            { id: 'q13', dim: 'SN', text: 'Trong bài tập dự án, bạn...', a: 'Tập trung vào chi tiết, yêu cầu cụ thể.', b: 'Khám phá phương án mới, cải tiến cách làm.' },
+            { id: 'q14', dim: 'SN', text: 'Xu hướng học tập của bạn...', a: 'Muốn “làm đúng” theo hướng dẫn.', b: 'Muốn “hiểu sâu” để sáng tạo cách riêng.' },
+            { id: 'q15', dim: 'SN', text: 'Khi đánh giá thông tin, bạn...', a: 'Ưu tiên dữ liệu hiện có.', b: 'Đặt câu hỏi “nếu… thì…”, hình dung tương lai.' },
+            { id: 'q16', dim: 'SN', text: 'Khi đọc truyện, bạn...', a: 'Thích chi tiết thực tế.', b: 'Thích ẩn dụ, biểu tượng.' },
+            { id: 'q17', dim: 'SN', text: 'Trong đời sống, bạn...', a: 'Chú ý đến sự thật, điều cụ thể.', b: 'Chú ý đến ý nghĩa, khả năng.' },
+            { id: 'q18', dim: 'SN', text: 'Bạn dễ nhớ...', a: 'Thông tin chính xác.', b: 'Ý chính, khái niệm.' },
+            { id: 'q19', dim: 'SN', text: 'Khi làm bài toán, bạn...', a: 'Giải theo công thức.', b: 'Sáng tạo cách giải mới.' },
+            { id: 'q20', dim: 'SN', text: 'Khi nghe giảng, bạn...', a: 'Thích ví dụ cụ thể.', b: 'Thích tóm tắt, sơ đồ khái niệm.' },
+
+            // T vs F (10 câu)
+            { id: 'q21', dim: 'TF', text: 'Bạn thường ưu tiên điều gì khi ra quyết định?', a: 'Lý trí, phân tích các yếu tố khách quan.', b: 'Cảm xúc và tác động đến mọi người.' },
+            { id: 'q22', dim: 'TF', text: 'Trong tranh luận, bạn...', a: 'Thích lập luận logic, thẳng thắn.', b: 'Thích hoà giải, giữ cảm xúc tích cực.' },
+            { id: 'q23', dim: 'TF', text: 'Khi góp ý bạn bè, bạn...', a: 'Nói thẳng điểm cần cải thiện.', b: 'Nói khéo để người nghe không buồn.' },
+            { id: 'q24', dim: 'TF', text: 'Với xung đột, bạn...', a: 'Giải quyết theo nguyên tắc/công bằng.', b: 'Ưu tiên mối quan hệ/hoàn cảnh cụ thể.' },
+            { id: 'q25', dim: 'TF', text: 'Bạn thấy quan trọng hơn...', a: 'Đúng-sai, tiêu chuẩn.', b: 'Tình cảm, mối quan hệ.' },
+            { id: 'q26', dim: 'TF', text: 'Khi làm nhóm, bạn...', a: 'Quan tâm kết quả.', b: 'Quan tâm tinh thần mọi người.' },
+            { id: 'q27', dim: 'TF', text: 'Bạn đánh giá người khác...', a: 'Theo năng lực.', b: 'Theo nỗ lực, ý định.' },
+            { id: 'q28', dim: 'TF', text: 'Khi xem phim, bạn thích...', a: 'Logic, kịch bản.', b: 'Cảm xúc, nhân vật.' },
+            { id: 'q29', dim: 'TF', text: 'Trong bài luận, bạn...', a: 'Dẫn chứng logic.', b: 'Trải nghiệm cá nhân.' },
+            { id: 'q30', dim: 'TF', text: 'Trong đời sống, bạn coi trọng...', a: 'Nguyên tắc.', b: 'Cảm xúc.' },
+
+            // J vs P (10 câu)
+            { id: 'q31', dim: 'JP', text: 'Bạn thích làm gì hơn trong công việc/học tập?', a: 'Theo kế hoạch rõ ràng, có tổ chức.', b: 'Linh hoạt, tuỳ cơ ứng biến.' },
+            { id: 'q32', dim: 'JP', text: 'Khi phải hoàn thành một công việc, bạn...', a: 'Lập kế hoạch và làm ngay.', b: 'Tìm thêm thông tin rồi điều chỉnh dần.' },
+            { id: 'q33', dim: 'JP', text: 'Bạn cảm thấy sao về kế hoạch và lịch trình?', a: 'Thích kỷ luật, tuân thủ thời hạn.', b: 'Thích linh hoạt, không quá gò bó.' },
+            { id: 'q34', dim: 'JP', text: 'Kiểu công việc ưa thích của bạn?', a: 'Yêu cầu rõ, tiêu chí cụ thể.', b: 'Sáng tạo, có không gian thử nghiệm.' },
+            { id: 'q35', dim: 'JP', text: 'Trước kỳ thi/đ deadline, bạn...', a: 'Chuẩn bị sớm theo checklist.', b: 'Tăng tốc nước rút khi gần tới hạn.' },
+            { id: 'q36', dim: 'JP', text: 'Trong du lịch, bạn...', a: 'Lập lịch trình chi tiết.', b: 'Đi đâu thì đi, không cần kế hoạch.' },
+            { id: 'q37', dim: 'JP', text: 'Với deadline, bạn...', a: 'Hoàn thành sớm.', b: 'Hay trì hoãn đến phút cuối.' },
+            { id: 'q38', dim: 'JP', text: 'Trong học tập, bạn...', a: 'Có kế hoạch dài hạn.', b: 'Hứng đâu học đó.' },
+            { id: 'q39', dim: 'JP', text: 'Khi làm đồ án, bạn...', a: 'Chia nhỏ công việc, theo trình tự.', b: 'Làm theo cảm hứng.' },
+            { id: 'q40', dim: 'JP', text: 'Trong đời sống, bạn...', a: 'Ngăn nắp, trật tự.', b: 'Thoải mái, linh động.' }
         ];
 
         // ====== RENDER QUIZ ======
@@ -304,7 +300,6 @@
         function renderQuiz() {
             const form = document.getElementById('quiz-form');
             form.innerHTML = '';
-
             QUESTIONS.forEach((q, idx) => {
                 const qEl = document.createElement('div');
                 qEl.className = 'question';
@@ -324,219 +319,221 @@
             });
         }
 
+        // ====== CLIENT-SIDE SCORING ======
+        const MAP_AB = { EI: { A: 'E', B: 'I' }, SN: { A: 'S', B: 'N' }, TF: { A: 'T', B: 'F' }, JP: { A: 'J', B: 'P' } };
+
+        function scoreMBTI(answers) {
+            const tallies = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+            QUESTIONS.forEach(q => {
+                const raw = answers[q.id] || '';
+                const pick = raw.trim().toUpperCase().startsWith('A') ? 'A' : 'B';
+                const letter = MAP_AB[q.dim][pick];
+                tallies[letter]++;
+            });
+            const type = (tallies.E >= tallies.I ? 'E' : 'I') + (tallies.S >= tallies.N ? 'S' : 'N') + (tallies.T >= tallies.F ? 'T' : 'F') + (tallies.J >= tallies.P ? 'J' : 'P');
+            const breakdownCounts = {
+                EI: { E: tallies.E, I: tallies.I, diff: Math.abs(tallies.E - tallies.I) },
+                SN: { S: tallies.S, N: tallies.N, diff: Math.abs(tallies.S - tallies.N) },
+                TF: { T: tallies.T, F: tallies.F, diff: Math.abs(tallies.T - tallies.F) },
+                JP: { J: tallies.J, P: tallies.P, diff: Math.abs(tallies.J - tallies.P) }
+            };
+            return { type, tallies, breakdownCounts };
+        }
+
+        function confidenceTag(diff) {
+            if (diff >= 4) return '<span class="badge-soft">Tự tin cao</span>';
+            if (diff >= 2) return '<span class="badge-soft">Tự tin vừa</span>';
+            return '<span class="badge-soft">Tự tin thấp</span>';
+        }
+
         // ====== SUBMIT FLOW ======
         function submitQuiz() {
-            // Validate all answered
             const form = document.getElementById('quiz-form');
             const formData = new FormData(form);
-            const answers = {};
-            let allAnswered = true;
+            const answers = {}; let allAnswered = true;
+            for (const q of QUESTIONS) { const ans = formData.get(q.id); if (!ans) { allAnswered = false; break; } answers[q.id] = ans; }
+            if (!allAnswered) { alert('Vui lòng trả lời đầy đủ 40 câu trước khi nộp!'); return; }
 
-            for (const q of QUESTIONS) {
-                const ans = formData.get(q.id);
-                if (!ans) { allAnswered = false; break; }
-                answers[q.id] = ans;
-            }
+            // Client-side scoring
+            const scored = scoreMBTI(answers);
 
-            if (!allAnswered) {
-                alert('Vui lòng trả lời tất cả các câu hỏi trước khi nộp bài!');
-                return;
-            }
+            // Show loading while optionally calling LLM for narrative + career
+            const loadingModal = new bootstrap.Modal(document.getElementById('loadingModal')); loadingModal.show();
 
-            // Show loading
-            const loadingModal = new bootstrap.Modal(document.getElementById('loadingModal'));
-            loadingModal.show();
-
-            analyzeResults(answers)
-                .catch(err => {
-                    console.error(err);
-                    alert('Có lỗi xảy ra khi phân tích kết quả. Vui lòng thử lại!');
-                })
+            analyzeAndRender(scored, answers)
+                .catch(err => { console.error(err); alert('Có lỗi khi phân tích. Vui lòng thử lại!'); })
                 .finally(() => loadingModal.hide());
         }
 
-        // ====== LLM CALLS ======
-        async function analyzeResults(answers) {
-            // Build plain text answers for MBTI prompt
-            let answersText = '';
-            Object.entries(answers).forEach(([qid, answer], i) => {
-                answersText += `Câu ${i + 1}: ${answer}\n`;
-            });
+        // ====== LLM CALLS (optional) ======
+        async function analyzeAndRender(scored, answers) {
+            // Build a local mbti_result first
+            const localMbti = buildLocalMbtiResult(scored);
 
-            const prompt1 = `Bạn là chuyên gia MBTI. Hãy chấm loại MBTI dựa trên 20 câu trả lời A/B dưới đây.
-# YÊU CẦU ĐẦU RA (bắt buộc JSON theo schema):
-- Gồm 3 phần: Kết quả, Phân tích kết quả, Tóm tắt MBTI.
-- "Kết quả": chỉ ghi loại MBTI (một trong 16 loại: ISTJ, ISFJ, INFJ, INTJ, ISTP, ISFP, INFP, INTP, ESTP, ESFP, ENFP, ENTP, ESTJ, ESFJ, ENFJ, ENTJ).
-- "Phân tích kết quả": giải thích đầy đủ 4 chữ cái theo 4 cặp EI, SN, TF, JP.
-- "Tóm tắt MBTI": tóm tắt vài câu, súc tích.
-- KHÔNG thêm bình luận khác, KHÔNG gợi ý nghề nghiệp ở prompt này.
+            let mbtiResult = localMbti; // default: local explanation
 
-# DỮ LIỆU CÂU TRẢ LỜI (A/B):
-${answersText}`;
-
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`;
-
-            const payload1 = {
-                contents: [{ role: 'user', parts: [{ text: prompt1 }] }],
-                generationConfig: {
-                    response_mime_type: 'application/json',
-                    response_schema: {
-                        type: 'OBJECT',
-                        properties: {
-                            mbti_result: {
-                                type: 'OBJECT',
-                                properties: {
-                                    MBTI: { type: 'STRING' },
-                                    breakdown: {
-                                        type: 'ARRAY',
-                                        items: {
-                                            type: 'OBJECT', required: ['letter', 'describe'],
-                                            properties: { letter: { type: 'STRING' }, describe: { type: 'STRING' } }
-                                        }
-                                    },
-                                    summary: { type: 'STRING' }
-                                }
-                            }
+            // If GEMINI_API_KEY present, ask for polished explanation (no career here)
+            if (GEMINI_API_KEY && GEMINI_API_KEY !== 'REPLACE_WITH_YOUR_OWN_KEY') {
+                try {
+                    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`;
+                    const prompt1 = buildExplainerPrompt(scored, answers);
+                    const payload1 = {
+                        contents: [{ role: 'user', parts: [{ text: prompt1 }] }],
+                        generationConfig: {
+                            response_mime_type: 'application/json',
+                            response_schema: { type: 'OBJECT', properties: { mbti_result: { type: 'OBJECT', properties: { MBTI: { type: 'STRING' }, breakdown: { type: 'ARRAY', items: { type: 'OBJECT', required: ['letter', 'describe'], properties: { letter: { type: 'STRING' }, describe: { type: 'STRING' } } } }, summary: { type: 'STRING' } } } } }
                         }
-                    }
-                }
-            };
+                    };
+                    const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload1) });
+                    if (res.ok) { const data = await res.json(); const parsed = JSON.parse(data?.candidates?.[0]?.content?.parts?.[0]?.text || '{}'); if (parsed?.mbti_result?.MBTI) mbtiResult = parsed.mbti_result; }
+                } catch (e) { console.warn('Explainer LLM failed, fallback to local.', e); }
+            }
 
-            const res1 = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload1) });
-            if (!res1.ok) throw new Error(`HTTP ${res1.status}: ${await res1.text()}`);
-            const data1 = await res1.json();
-            const parsed1 = JSON.parse(data1?.candidates?.[0]?.content?.parts?.[0]?.text || '{}');
-            const mbti = parsed1?.mbti_result?.MBTI || 'NA';
-
-            // Try optional career guidance if user provided inputs
+            // Career guidance (optional)
             const currentJob = document.getElementById('currentJob').value?.trim();
             const optionA = document.getElementById('optionA').value?.trim();
             const optionB = document.getElementById('optionB').value?.trim();
 
             let career = null;
-            if (mbti && (currentJob || (optionA && optionB))) {
-                const prompt2 = buildCareerPrompt({
-                    mbtiResult: JSON.stringify(parsed1.mbti_result),
-                    currentJob,
-                    optionA,
-                    optionB
-                });
-
-                const payload2 = {
-                    contents: [{ role: 'user', parts: [{ text: prompt2 }] }],
-                    generationConfig: {
-                        response_mime_type: 'application/json',
-                        response_schema: {
-                            type: 'OBJECT',
-                            properties: {
-                                career_guidance: {
-                                    type: 'OBJECT',
-                                    properties: {
-                                        pick: { type: 'STRING', description: 'Tên lựa chọn được khuyên (hoặc Option A/B nếu không có tên). Chỉ MỘT hướng.' },
-                                        rationale: { type: 'STRING', description: 'Lý do ngắn gọn, 3-6 câu.' }
-                                    }
-                                }
+            if ((optionA && optionB) || currentJob) {
+                if (GEMINI_API_KEY && GEMINI_API_KEY !== 'REPLACE_WITH_YOUR_OWN_KEY') {
+                    try {
+                        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`;
+                        const prompt2 = buildCareerPrompt({ mbtiResult: JSON.stringify(mbtiResult), currentJob, optionA, optionB });
+                        const payload2 = {
+                            contents: [{ role: 'user', parts: [{ text: prompt2 }] }],
+                            generationConfig: {
+                                response_mime_type: 'application/json',
+                                response_schema: { type: 'OBJECT', properties: { career_guidance: { type: 'OBJECT', properties: { pick: { type: 'STRING' }, rationale: { type: 'STRING' } } } } }
                             }
-                        }
-                    }
-                };
-
-                const res2 = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload2) });
-                if (res2.ok) {
-                    const data2 = await res2.json();
-                    const parsed2 = JSON.parse(data2?.candidates?.[0]?.content?.parts?.[0]?.text || '{}');
-                    career = parsed2?.career_guidance || null;
+                        };
+                        const res2 = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload2) });
+                        if (res2.ok) { const data2 = await res2.json(); const parsed2 = JSON.parse(data2?.candidates?.[0]?.content?.parts?.[0]?.text || '{}'); career = parsed2?.career_guidance || null; }
+                    } catch (e) { console.warn('Career LLM failed, omit career section.', e); }
                 }
             }
 
-            displayResult(parsed1?.mbti_result, career);
+            displayResult(mbtiResult, scored, career);
+        }
+
+        function buildExplainerPrompt(scored, answers) {
+            const { type, breakdownCounts } = scored;
+            return `Bạn là chuyên gia MBTI. Tôi đã chấm client-side được loại: ${type}.
+# YÊU CẦU ĐẦU RA (bắt buộc JSON theo schema):
+- Trả về mbti_result gồm: MBTI, breakdown (4 phần EI/SN/TF/JP — mô tả ngắn từng chữ), summary (3-5 câu, súc tích).
+- KHÔNG gợi ý nghề nghiệp trong prompt này.
+
+# DỮ LIỆU ĐẾM (tham khảo):
+EI: E=${breakdownCounts.EI.E}, I=${breakdownCounts.EI.I}
+SN: S=${breakdownCounts.SN.S}, N=${breakdownCounts.SN.N}
+TF: T=${breakdownCounts.TF.T}, F=${breakdownCounts.TF.F}
+JP: J=${breakdownCounts.JP.J}, P=${breakdownCounts.JP.P}`;
         }
 
         function buildCareerPrompt({ mbtiResult, currentJob, optionA, optionB }) {
-            // Prompt bạn đưa — đã chỉnh lại cho chặt chẽ & ràng buộc đầu ra JSON
             return `Bạn là chuyên gia định hướng ngành học & nghề nghiệp cho học sinh lớp 12.
-# DỮ LIỆU ĐẦU VÀO
-- KẾT QUẢ MBTI (JSON): ${mbtiResult}
-- Hiện tại: ${currentJob || '(không cung cấp)'}
-- Phân vân giữa: ${optionA || '(A?)'} và ${optionB || '(B?)'}
+# KẾT QUẢ MBTI (JSON): ${mbtiResult}
+# BỐI CẢNH: ${currentJob || '(không cung cấp)'}
+# PHÂN VÂN: ${optionA || '(A?)'} vs ${optionB || '(B?)'}
 
 # NHIỆM VỤ
-- Dựa trên MBTI (đặc biệt phần breakdown), bối cảnh hiện tại, và hai lựa chọn đã nêu.
-- Hãy LỰA CHỌN DỨT KHOÁT MỘT HƯỚNG (chỉ 1) phù hợp nhất.
-- Trình bày ngắn gọn lý do (3–6 câu). Không liệt kê lộ trình/goal, không đề xuất thêm nghề khác ngoài 2 lựa chọn.
-- Không mời gọi thiết kế mục tiêu sự nghiệp.
+- Dựa trên MBTI (ưu tiên phần breakdown), bối cảnh và hai lựa chọn.
+- Hãy LỰA CHỌN DỨT KHOÁT MỘT HƯỚNG (chỉ 1).
+- Lý do ngắn gọn 3–6 câu.
+- KHÔNG gợi ý thêm nghề khác, KHÔNG mời gọi thiết kế mục tiêu sự nghiệp.
 
-# ĐẦU RA (bắt buộc JSON theo schema):
+# ĐẦU RA (JSON):
 {
   "career_guidance": {
-    "pick": "<ghi chính xác tên lựa chọn được khuyên – hoặc Option A/B nếu thiếu>",
-    "rationale": "<3–6 câu lý do, dựa vào MBTI và bối cảnh>"
+    "pick": "<ghi tên lựa chọn được khuyên – hoặc Option A/B nếu thiếu>",
+    "rationale": "<3–6 câu lý do>"
   }
 }`;
         }
 
+        // ====== LOCAL EXPLAINER (fallback when no LLM) ======
+        const LETTER_EXPLAIN = {
+            E: 'Extraversion – hướng ngoại, nạp năng lượng qua tương tác.',
+            I: 'Introversion – hướng nội, nạp năng lượng khi ở một mình.',
+            S: 'Sensing – thiên về dữ kiện, chi tiết, hiện thực.',
+            N: 'iNtuition – thiên về ý tưởng, mô hình, tương lai.',
+            T: 'Thinking – ra quyết định dựa trên logic, nguyên tắc.',
+            F: 'Feeling – ra quyết định dựa trên giá trị & con người.',
+            J: 'Judging – ưa kế hoạch, cấu trúc, quyết đoán.',
+            P: 'Perceiving – linh hoạt, thích khám phá, thích nghi.'
+        };
+
+        function buildLocalMbtiResult(scored) {
+            const type = scored.type;
+            const breakdown = [
+                { letter: type[0], describe: LETTER_EXPLAIN[type[0]] },
+                { letter: type[1], describe: LETTER_EXPLAIN[type[1]] },
+                { letter: type[2], describe: LETTER_EXPLAIN[type[2]] },
+                { letter: type[3], describe: LETTER_EXPLAIN[type[3]] }
+            ];
+            const summary = `Bạn có xu hướng ${type[0] === 'E' ? 'hướng ngoại' : 'hướng nội'}, ${type[1] === 'S' ? 'thực tế, chi tiết' : 'trực giác, ý tưởng'}, ${type[2] === 'T' ? 'lý trí, nguyên tắc' : 'đặt con người làm trung tâm'}, và ${type[3] === 'J' ? 'ưa kế hoạch, trật tự' : 'linh hoạt, thích nghi'}.`;
+            return { MBTI: type, breakdown, summary };
+        }
+
         // ====== RENDER RESULTS ======
-        function displayResult(mbtiResult, career) {
-            const resultContent = document.getElementById('resultContent');
+        function displayResult(mbtiResult, scored, career) {
+            const r = document.getElementById('resultContent');
+            const { breakdownCounts } = scored;
 
-            let html = '';
-
-            if (mbtiResult) {
-                html += `
-        <div class="mbti-result">
-          <div class="mbti-type">${escapeHTML(mbtiResult.MBTI || '')}</div>
-          <h4 class="section-heading">Phân Tích Kết Quả</h4>
-        </div>`;
-
-                if (Array.isArray(mbtiResult.breakdown)) {
-                    mbtiResult.breakdown.forEach(item => {
-                        html += `
-              <div class="breakdown-item">
-                <div class="breakdown-letter">${escapeHTML(item.letter || '')}</div>
-                <div>${escapeHTML(item.describe || '')}</div>
-              </div>`;
-                    });
-                }
-
-                if (mbtiResult.summary) {
-                    html += `
-            <div class="summary-section">
-              <h5 class="section-heading">Tóm Tắt MBTI</h5>
-              <p>${escapeHTML(mbtiResult.summary)}</p>
-            </div>`;
-                }
-            }
-
-            // Career guidance (optional)
-            if (career) {
-                html += `
-          <hr class="my-4">
-          <h4 class="section-heading">Định Hướng Nghề Nghiệp / Ngành Học</h4>
-          <div class="career-card">
-            <p><b>Khuyến nghị:</b> ${escapeHTML(career.pick || '')}</p>
-            <p><b>Lý do:</b> ${escapeHTML(career.rationale || '')}</p>
+            function pairRow(label, aName, aVal, bName, bVal) {
+                const total = aVal + bVal || 1; const aPct = Math.round(100 * aVal / total);
+                return `
+          <div class="row align-items-center mb-2">
+            <div class="col-12 col-md-3 mini"><b>${label}</b> — ${aName}:${aVal} / ${bName}:${bVal} ${confidenceTag(Math.abs(aVal - bVal))}</div>
+            <div class="col-12 col-md-9">
+              <div class="bar"><div style="width:${aPct}%"></div></div>
+              <div class="mini mt-1">${aName} ${aPct}% • ${bName} ${100 - aPct}%</div>
+            </div>
           </div>`;
             }
 
-            resultContent.innerHTML = html;
+            let html = '';
+            html += `<div class="mbti-type">${escapeHTML(mbtiResult.MBTI)}</div>`;
+            html += `<div class="subnote">Kết quả được chấm bằng client‑side (40 câu)</div>`;
 
-            const resultModal = new bootstrap.Modal(document.getElementById('resultModal'));
-            resultModal.show();
+            // Bars
+            html += `<div class="mt-3">` +
+                pairRow('E vs I', 'E', breakdownCounts.EI.E, 'I', breakdownCounts.EI.I) +
+                pairRow('S vs N', 'S', breakdownCounts.SN.S, 'N', breakdownCounts.SN.N) +
+                pairRow('T vs F', 'T', breakdownCounts.TF.T, 'F', breakdownCounts.TF.F) +
+                pairRow('J vs P', 'J', breakdownCounts.JP.J, 'P', breakdownCounts.JP.P) +
+                `</div>`;
+
+            // Breakdown
+            html += `<h5 class="section-heading mt-3">Phân tích 4 chữ</h5>`;
+            (mbtiResult.breakdown || []).forEach(it => {
+                html += `<div class="breakdown-item"><b>${escapeHTML(it.letter)}</b>: ${escapeHTML(it.describe || '')}</div>`;
+            });
+
+            if (mbtiResult.summary) {
+                html += `<div class="summary-section mt-3"><h6 class="section-heading">Tóm tắt MBTI</h6><p>${escapeHTML(mbtiResult.summary)}</p></div>`;
+            }
+
+            // Career guidance
+            if (career) {
+                html += `<hr class="my-4"><h5 class="section-heading">Định Hướng Ngành/Nghề</h5>`;
+                html += `<div class="career-card"><p><b>Khuyến nghị:</b> ${escapeHTML(career.pick || '')}</p><p><b>Lý do:</b> ${escapeHTML(career.rationale || '')}</p></div>`;
+            }
+
+            r.innerHTML = html;
+            new bootstrap.Modal(document.getElementById('resultModal')).show();
         }
 
         function restartQuiz() {
             document.getElementById('quiz-form').reset();
             renderQuiz();
-            const resultModal = bootstrap.Modal.getInstance(document.getElementById('resultModal'));
-            if (resultModal) resultModal.hide();
+            const resultModal = bootstrap.Modal.getInstance(document.getElementById('resultModal')); if (resultModal) resultModal.hide();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         // ====== UTILS ======
         function escapeHTML(str) {
-            return (str || '').toString().replace(/[&<>"']/g, (c) => ({
-                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-            })[c]);
+            return (str || '').toString().replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
         }
     </script>
 </body>
